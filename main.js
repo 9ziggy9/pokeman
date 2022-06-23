@@ -1,3 +1,4 @@
+const {pokePrint} = require('./include/pokemon.js');
 // closure that represents a pokemon,
 // -- name
 // -- owner
@@ -44,17 +45,13 @@ const pokemon = (name, owner) => {
 };
 
 // pikachu stuff
-const pikachu = pokemon("pikachu", "Sam");
-pikachu.levelup();
-pikachu.levelup();
-pikachu.levelup();
-pikachu.evolve();
-pikachu.pokeInfo();
-pikachu.resetLevel();
-pikachu.pokeInfo();
+// const pikachu = pokemon("pikachu", "Sam");
+// pikachu.levelup();
+// pikachu.levelup();
+// pikachu.levelup();
+// pikachu.evolve();
+// pikachu.pokeInfo();
+// pikachu.resetLevel();
+// pikachu.pokeInfo();
 
-// charmander stuff
-const charmander = pokemon("charmander", "Abel");
-charmander.levelup();
-charmander.evolve();
-charmander.pokeInfo();
+pokePrint('pikachu');
