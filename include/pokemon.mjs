@@ -1,4 +1,4 @@
-function printPokemon(pokeName) {
+export default function pokePrint(pokeName) {
   switch(pokeName) {
   case 'pikachu':
     console.log(`
@@ -47,6 +47,6 @@ function printPokemon(pokeName) {
   }
 }
 
-module.exports = {
-  pokePrint: printPokemon,
-};
+// module.exports = {
+//   pokePrint: printPokemon,
+// };
