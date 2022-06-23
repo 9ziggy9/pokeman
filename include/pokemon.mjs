@@ -44,6 +44,16 @@ export default function pokePrint(pokeName) {
 ⠙⠓⠒⠈⠁⠀⠀⠀⠀⠀⠀⠀⢳⡇⢰⢀⡠⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 `);
     break;
+  case 'dead':
+    console.log(`
+	  ⣿⣿⣿⣿⣿⣿
+	  ⣿⣿
+	  ⣿⣿⣿⣿
+	  ⣿⣿
+	  ⣿⣿
+	  ⣿⣿
+`);
+    break;
   }
 }
 
