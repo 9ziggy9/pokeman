@@ -11,5 +11,5 @@ Available commands can be listed with
 ```
 
 #### UPDATES
-- 06/16/2022: Implemented creation of pokemans via closure; simple method of displaying pokeman information and way to change private variables encapsulated by closure added.
+- 06/16/2022: Implemented creation of pokemans via closure; simple getter/setter methods on encapsulated variables.
 - 06/23/2022: Created runtime which interfaces with readline to do stuff; pokemans can be caught, allowed to starve, or fed.
