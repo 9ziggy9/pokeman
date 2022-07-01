@@ -1,8 +1,7 @@
 const readline = require('readline');
 
 class Prompt {
-  constructor(symbol) {
-    this.symbol = symbol;
+  constructor() {
     this.rl = readline.createInterface({
 	input: process.stdin,
 	output: process.stdout
@@ -10,7 +9,7 @@ class Prompt {
   }
   question = (response) => {
     return new Promise((resolve, reject) => {
-      this.rl.question(response + `\n${this.symbol}`, (answer) => {
+      this.rl.question(response, (answer) => {
 	resolve(answer);
       });
     });
