@@ -1,4 +1,4 @@
-export default function pokePrint(pokeName) {
+function pokePrint(pokeName) {
   switch(pokeName) {
   case 'pikachu':
     console.log(`
@@ -56,3 +56,7 @@ export default function pokePrint(pokeName) {
     break;
   }
 }
+
+module.exports = {
+  pokePrint
+};
