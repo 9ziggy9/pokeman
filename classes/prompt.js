@@ -1,26 +1,21 @@
 const readline = require('readline');
 
 class Prompt {
-  constructor(symbol, response) {
+  constructor(symbol) {
     this.symbol = symbol;
-    this.response = response;
-    this.rl = readline;
+    this.rl = readline.createInterface({
+	input: process.stdin,
+	output: process.stdout
+    });
   }
-  static rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout
-  });
-  static close = () => Prompt.rl.close();
-
-  question = () => {
+  question = (response) => {
     return new Promise((resolve, reject) => {
-      Prompt.rl.question(this.symbol, (answer) => {
-	console.log(this.response);
-	console.log(answer);
-	resolve();
+      this.rl.question(response + `\n${this.symbol}`, (answer) => {
+	resolve(answer);
       });
     });
   }
+  close = () => this.rl.close();
 }
 
 module.exports = Prompt;

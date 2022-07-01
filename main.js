@@ -1,11 +1,18 @@
 const {pokePrint} = require('./include/pokeart.js');
 const Prompt = require('./classes/prompt.js');
 
-const prompt = new Prompt(">>> ", "Command was: ");
+// TODO:
+// multiplayer with new prompt instances?
+const prompt = new Prompt(">>> ");
 
 async function run() {
-  await prompt.question();
-  Prompt.close();
+  let quit = false;
+  while (!quit) {
+    const answer = await prompt.question("What is your command?");
+    console.log(`Your command was ${answer}`);
+    if (answer === 'quit')  quit = true;
+  }
+  prompt.close();
 }
 
 run();
