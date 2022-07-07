@@ -4,7 +4,8 @@ class Prompt {
   constructor() {
     this.rl = readline.createInterface({
 	input: process.stdin,
-	output: process.stdout
+	output: process.stdout,
+	removeHistoryDuplicates: true
     });
   }
   question = (response) => {
@@ -16,7 +17,8 @@ class Prompt {
   }
   close = () => this.rl.close();
   // Moves prompt to bottom of TTY
-  clear = () => readline.cursorTo(process.stdout, 0, process.stdout.rows);
+  top = () => readline.cursorTo(process.stdout, 0, 0);
+  bottom = () => readline.cursorTo(process.stdout, 0, process.stdout.rows);
   pause = async () => await this.rl.pause();
 }
 
