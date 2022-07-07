@@ -15,6 +15,8 @@ class Prompt {
     });
   }
   close = () => this.rl.close();
+  // Moves prompt to bottom of TTY
+  clear = () => readline.cursorTo(process.stdout, 0, process.stdout.rows);
 }
 
 module.exports = Prompt;
