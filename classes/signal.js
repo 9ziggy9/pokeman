@@ -10,6 +10,7 @@ class Signal {
       case 'hello': return new Command("Hello, world");
       case 'clear': return new Command("");
       case 'alert': return new Alert("Alert, test!");
+      case 'menu': return new SubSignal("Submenu");
       default:
 	console.log(signal);
 	return signal;
@@ -33,9 +34,33 @@ class Alert extends Signal {
     super(string);
   }
   static queue = [];
+  static display() {
+    Alert.queue.forEach(alert => {
+      console.log(alert);
+    });
+  }
   execute() {
-    console.clear();
-    console.log(this.msg);
+    Alert.queue.push(this.msg);
+    return this.signal;
+  }
+}
+
+class SubSignal extends Signal {
+  constructor(string) {
+    super(string);
+    this.string = string;
+    this.signal = -1;
+  }
+  static handler(signal) {
+    switch(signal) {
+      case 'quit': return new Command("kill");
+      case 'hello': return new Command("Hello, world2");
+      default:
+	console.log(signal);
+	return signal;
+    }
+  }
+  execute() {
     return this.signal;
   }
 }
@@ -43,5 +68,6 @@ class Alert extends Signal {
 module.exports = {
   Signal,
   Command,
-  Alert
+  Alert,
+  SubSignal
 };
